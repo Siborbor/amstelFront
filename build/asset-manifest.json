@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05fa4bd7.css",
+    "main.js": "/static/js/main.c7780db8.js",
+    "static/media/bg_amstel.jpg": "/static/media/bg_amstel.83164349419bd45e366b.jpg",
+    "static/media/BebasNeueRegular.ttf": "/static/media/BebasNeueRegular.edfe9f52af94d1f8e269.ttf",
+    "static/media/BebasNeueBold.ttf": "/static/media/BebasNeueBold.c46465bff00a0e8a6176.ttf",
+    "static/media/lata-amstel.png": "/static/media/lata-amstel.9ebd143b702d7cc79e1d.png",
+    "static/media/logo-amstel.png": "/static/media/logo-amstel.19b6d5ed227049e6192c.png",
+    "index.html": "/index.html",
+    "main.05fa4bd7.css.map": "/static/css/main.05fa4bd7.css.map",
+    "main.c7780db8.js.map": "/static/js/main.c7780db8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05fa4bd7.css",
+    "static/js/main.c7780db8.js"
+  ]
+}
