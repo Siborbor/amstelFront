@@ -1,0 +1,25 @@
+.contenedorCabezera{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vw;
+    gap:15px;
+}
+
+.img-text-logo{
+    width:32vw;
+}
+
+.img-logo{
+    width: 8vw;
+}
+
+.subtitulo{
+    text-align: center;
+    text-transform:uppercase;
+    font-size: 2.7vw;
+    font-family: 'BebasNeueRegular';
+    color:#2D2D2D;
+    margin:0px;
+}

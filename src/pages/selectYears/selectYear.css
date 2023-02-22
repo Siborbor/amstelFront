@@ -1,0 +1,17 @@
+body{
+    background-image: url('../../img/bg_amstel.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content:right ;
+}
+
+.contenedor{
+    margin-right: 10vw;
+    display:flex;
+    flex-direction: column;
+    gap:10px
+}

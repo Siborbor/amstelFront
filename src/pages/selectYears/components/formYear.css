@@ -1,0 +1,115 @@
+.contenedorDateSelect {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.5vw;
+  flex-direction: row-reverse;
+}
+.contenedorDateSelect select {
+  background-color: #eb1c24;
+  border-radius: 19px;
+  color: white;
+  font-size: 1.7vw;
+  padding: 0.8vw 2.5vw;
+  border: none;
+  font-family: "BebasNeueRegular";
+  border-right: 13px solid transparent;
+}
+
+.contenedorDateSelect select option {
+  font-family: "BebasNeueRegular";
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.contenedorCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  font-family: "BebasNeueBold";
+  font-size: 1.5rem;
+  color: #2d2d2d;
+}
+
+.botonSiguiente {
+  background-color: white;
+  color: #eb1c24;
+  margin: 6vw auto;
+  border-radius: 25px;
+  font-size: 2vw;
+  font-weight: bold;
+  padding: 4px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  font-family: "BebasNeueBold";
+}
+
+.botonSiguiente p {
+  margin: 0px;
+}
+
+.botonSiguiente:hover {
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 3px -2px rgba(0, 0, 0, 0.75);
+  transform: translate(-2px, -2px);
+}
+
+.ReactModal__Content {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloModal {
+  font-family: "BebasNeueBold";
+  color: #eb1c24;
+  text-align: center;
+}
+
+.botonModal {
+  width: 10vw;
+  margin: 0 auto;
+  background-color: #eb1c24;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 23px;
+  font-size: 1.3vw;
+  font-family: "BebasNeueBold";
+}
+
+.botonModal:hover {
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 3px -2px rgba(0, 0, 0, 0.75);
+  transform: translate(-2px, -2px);
+}
+
+.flechaRoja {
+  width: 0.6vw;
+  padding-left: 8px;
+}
+
+.checkbox {
+  cursor: pointer;
+  background-color: #fff;
+  background-image: url(data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e);
+  width: 38px;
+  height: 38px;
+  appearance: none;
+  border: 2px solid #888;
+  border-radius: 14px;
+  margin: -10px 7px;
+  padding: 0px;
+}
+
+.checkbox:checked {
+  background-color: #eb1c24;
+}

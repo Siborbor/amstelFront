@@ -1,0 +1,44 @@
+.contenedor_yaestasParticipando{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 195px;
+    margin-right: 10vw;
+    gap:15px;
+}
+
+.img-logo{
+    width: 8vw;
+}
+
+.titulo-yaestasparticipando{
+    text-align: center;
+    font-size: 6vw;
+    font-family: 'BebasNeuebold';
+    color:#eb1c24;
+    margin:0px;
+}
+
+.boton_subir_otro_codigo{
+background-color: white;
+  color: #eb1c24;
+  margin: 10vw auto;
+  border-radius: 25px;
+  font-size: 2.5vw;
+  font-weight: bold;
+  padding: 4px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  font-family: "BebasNeueBold";
+}
+
+.boton_subir_otro_codigo:hover {
+    box-shadow: 4px 4px 1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 5px 0px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 3px -2px rgba(0,0,0,0.75);
+    transform: translate(-2px,-2px);
+  }

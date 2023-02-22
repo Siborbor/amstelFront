@@ -1,0 +1,33 @@
+body{
+    background-image: url('../../img/bg_amstel.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content:right ;
+}
+
+.contenedor_formCodigo{
+    margin-right: 13vw;
+    margin-top: 11vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5px
+}
+
+.titulo_formCodigo{
+    font-family: 'BebasNeueRegular';
+    font-size: 2.3vw;
+    margin: 0px;
+    color:#2D2D2D;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.img_cabezera_formCodigo{
+    width: 14vw;
+}

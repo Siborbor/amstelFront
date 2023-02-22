@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "BebasNeueBold";
+  src: local("BebasNeueBold"),
+    url("./fonts/bebas-neue/BebasNeueBold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "BebasNeueRegular";
+  src: local("BebasNeueRegular"),
+    url("./fonts/bebas-neue/BebasNeueRegular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.contenedor18years {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50px;
+  top: 110%;
+  gap:10px
+}
+
+.contenedor18years_img {
+  width: 14px;
+}
+
+.contenedor18years_text{
+  color:white;
+  font-family: "BebasNeueRegular";
+  font-size: 0.8vw;
+}
