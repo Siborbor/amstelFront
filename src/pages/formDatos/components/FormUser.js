@@ -52,10 +52,9 @@ const FormUser = () => {
           if (!values.telefono) {
             errors.telefono = "Ingresa tu teléfono*";
           } else if (
-            (values.telefono.length > 10) ^
-            (values.telefono.length < 10)
+            (values.telefono.length > 10)
           ) {
-            errors.telefono = "Tu número de teléfono debe contener 10 dígitos*";
+            errors.telefono = "Tu número de teléfono debe contener menos de 10 dígitos*";
           } //control tipo de datos
           if (!values.ciudad) {
             errors.ciudad = "Ingresa tu ciudad*";

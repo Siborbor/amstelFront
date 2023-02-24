@@ -29,25 +29,28 @@ const FormCodigo = () => {
       };
 
       fetch("https://amstel-backend-production.up.railway.app/api", requestOptions)
-        .then((response) => response.text())
+        .then(response => response.json())
         .then((data) => {
-          const resultado = JSON.parse(data);
-          if (resultado.codigo === 200) {
-            navigate("/yaestasparticipando", {
-              state: {
-                nombre: values.nombre,
-                cedula: values.cedula,
-                telefono: values.telefono,
-                email: values.email,
-                ciudad: values.ciudad,
-              },
-            });
-          } else {
-            openModal();
-            setTexModal("Código Incorrecto");
-          }
-        })
-        .catch((error) => console.log("error", error));
+             if (data.codigo === 200) {
+               navigate("/yaestasparticipando", {
+                 state: {
+                   nombre: values.nombre,
+                   cedula: values.cedula,
+                   telefono: values.telefono,
+                   email: values.email,
+                   ciudad: values.ciudad,
+                 },
+               });
+             } else
+                if (data.codigo === 400) {
+               openModal();
+               setTexModal("Código ya ha sido ingresado");
+             }else{
+              openModal();
+              setTexModal("Código inválido");
+             }
+           })
+         .catch((error) => console.log("error", error));
     }
   };
 
@@ -63,6 +66,7 @@ const FormCodigo = () => {
     <div>
       <Formik
         initialValues={{
+          iduser:  Math.floor(Math.random() * 100),
           nombre: location.state.nombre,
           cedula: location.state.cedula,
           telefono: location.state.telefono,

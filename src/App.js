@@ -4,6 +4,7 @@ import SelectYears from "./pages/selectYears/SelectYears";
 import FormDatos from "./pages/formDatos/FormDatos";
 import IngresaCodigo from "./pages/ingresaCodigo/IngresaCodigo"
 import YaEstasParticipando from "./pages/yaEstasParticipando/YaEstasParticipando";
+import "../src/pages/responsive.css"
 
 const router = createBrowserRouter([
   {

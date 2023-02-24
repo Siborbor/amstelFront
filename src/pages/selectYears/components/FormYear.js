@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { DateSelect } from "react-ymd-date-select/dist/esm/presets/vanilla";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import "./formYear.css";
@@ -12,10 +11,69 @@ const FormYear = () => {
   const [check, setCheck] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
+  const [year, setYear] = useState([]);
+  const [diasSelect, setDiasSelect] = useState("");
+  const [mesesSelect, setMesesSelect] = useState("");
+  const [yearSelect, setYearSelect] = useState("");
+
+  const dias = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+  ];
+  const meses = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
 
   useEffect(() => {
-    setEdad(calcularEdad(date));
-  }, [date]);
+    for (let i = 2023; i > 1800; i--) {
+      setYear((preState) => [...preState, i]);
+    }
+  }, []);
+
+  useEffect(() => {
+    const dateSelect = yearSelect + "/" + mesesSelect + "/" + diasSelect;
+    setDate(dateSelect);
+    setEdad(calcularEdad(dateSelect));
+  }, [diasSelect, mesesSelect, yearSelect]);
 
   const handleChange = () => {
     setCheck(!check);
@@ -23,6 +81,7 @@ const FormYear = () => {
 
   const calcularEdad = (date) => {
     var hoy = new Date();
+    console.log(hoy)
     var cumpleanos = new Date(date);
     var edad = hoy.getFullYear() - cumpleanos.getFullYear();
     var m = hoy.getMonth() - cumpleanos.getMonth();
@@ -43,11 +102,12 @@ const FormYear = () => {
   }
 
   const buttonPress = () => {
+    console.log(date);
     if (date != null) {
       if (edad < 18) {
         setTexModal("No tienes la edad suficiente para ver este contenido");
         openModal();
-      } else if (edad >= 18) {
+      } else if (edad > 17) {
         navigate("/IngresoDatos", { replace: true });
       }
     } else {
@@ -56,19 +116,43 @@ const FormYear = () => {
     }
   };
 
+  const handleChangeDias = (e) => {
+    setDiasSelect(e.target.value);
+  };
+  const handleChangeMeses = (e) => {
+    setMesesSelect(e.target.value);
+  };
+  const handleChangeYear = (e) => {
+    setYearSelect(e.target.value);
+  };
+
   return (
     <div>
       <div className="contenedorDateSelect">
-        <DateSelect
-          value={date}
-          onChange={setDate}
-          lastYear={1800}
-          firstYear={2023}
-          monthFormat="MMM"
-          defaultYear="now"
-          defaultMonth="now"
-          defaultDay="now"
-        />
+        <select onChange={handleChangeDias}>
+          <option value="" disabled selected style={{color: "#fff9"}}>
+            DD
+          </option>
+          {dias.map((el) => (
+            <option value={el}>{el}</option>
+          ))}
+        </select>
+        <select onChange={handleChangeMeses}>
+          <option value="" disabled selected style={{color: "#fff9"}}>
+            MM
+          </option>
+          {meses.map((el, index) => (
+            <option value={index + 1}>{el}</option>
+          ))}
+        </select>
+        <select onChange={handleChangeYear}>
+          <option value="" disabled selected style={{color: "#fff9"}}>
+            AA
+          </option>
+          {year.map((el) => (
+            <option value={el}>{el}</option>
+          ))}
+        </select>
       </div>
       <div className="contenedorCheckbox">
         <label>

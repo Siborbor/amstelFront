@@ -2,17 +2,18 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 1.5vw;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .contenedorDateSelect select {
   background-color: #eb1c24;
   border-radius: 19px;
   color: white;
   font-size: 1.7vw;
-  padding: 0.8vw 2.5vw;
+  padding: 0.8vw 1.5vw;
   border: none;
   font-family: "BebasNeueRegular";
   border-right: 13px solid transparent;
+  text-align: center;
 }
 
 .contenedorDateSelect select option {
@@ -21,6 +22,7 @@
   text-align: center;
   justify-content: center;
   display: flex;
+  font-size: 1.3vw;
 }
 
 .contenedorCheckbox {
@@ -36,7 +38,7 @@
 .botonSiguiente {
   background-color: white;
   color: #eb1c24;
-  margin: 6vw auto;
+  margin: 9vw auto;
   border-radius: 25px;
   font-size: 2vw;
   font-weight: bold;
