@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import "./formYear.css";
 import FlechaRoja from "../../../img/flecha-roja.jpg";
+import { motion } from "framer-motion";
 
 const FormYear = () => {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ const FormYear = () => {
 
   const calcularEdad = (date) => {
     var hoy = new Date();
-    console.log(hoy)
+    console.log(hoy);
     var cumpleanos = new Date(date);
     var edad = hoy.getFullYear() - cumpleanos.getFullYear();
     var m = hoy.getMonth() - cumpleanos.getMonth();
@@ -128,9 +129,14 @@ const FormYear = () => {
 
   return (
     <div>
-      <div className="contenedorDateSelect">
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="contenedorDateSelect"
+      >
         <select onChange={handleChangeDias}>
-          <option value="" disabled selected style={{color: "#fff9"}}>
+          <option value="" disabled selected style={{ color: "#fff9" }}>
             DD
           </option>
           {dias.map((el) => (
@@ -138,7 +144,7 @@ const FormYear = () => {
           ))}
         </select>
         <select onChange={handleChangeMeses}>
-          <option value="" disabled selected style={{color: "#fff9"}}>
+          <option value="" disabled selected style={{ color: "#fff9" }}>
             MM
           </option>
           {meses.map((el, index) => (
@@ -146,15 +152,20 @@ const FormYear = () => {
           ))}
         </select>
         <select onChange={handleChangeYear}>
-          <option value="" disabled selected style={{color: "#fff9"}}>
+          <option value="" disabled selected style={{ color: "#fff9" }}>
             AA
           </option>
           {year.map((el) => (
             <option value={el}>{el}</option>
           ))}
         </select>
-      </div>
-      <div className="contenedorCheckbox">
+      </motion.div>
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="contenedorCheckbox"
+      >
         <label>
           <input
             type="checkbox"
@@ -164,7 +175,7 @@ const FormYear = () => {
           ></input>
           RECUÉRDAME
         </label>
-      </div>
+      </motion.div>
       <Modal
         isOpen={modalIsOpen}
         style={customStyles}
@@ -176,9 +187,15 @@ const FormYear = () => {
           Aceptar
         </button>
       </Modal>
-      <button className="botonSiguiente" onClick={buttonPress}>
+      <motion.button
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="botonSiguiente"
+        onClick={buttonPress}
+      >
         SIGUIENTE <img src={FlechaRoja} className="flechaRoja" />
-      </button>
+      </motion.button>
     </div>
   );
 };

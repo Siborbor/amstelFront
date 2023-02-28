@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e72b37d7.css",
-    "main.js": "/static/js/main.6561baad.js",
+    "main.css": "/static/css/main.b88c2cfe.css",
+    "main.js": "/static/js/main.e6c92879.js",
     "static/media/BG_amstel_mobil.jpg": "/static/media/BG_amstel_mobil.35c5a088f072676ac76d.jpg",
     "static/media/bg_amstel.jpg": "/static/media/bg_amstel.83164349419bd45e366b.jpg",
+    "static/media/spiner.gif": "/static/media/spiner.a11b84b7a11f10414d23.gif",
     "static/media/BebasNeueRegular.ttf": "/static/media/BebasNeueRegular.edfe9f52af94d1f8e269.ttf",
     "static/media/BebasNeueBold.ttf": "/static/media/BebasNeueBold.c46465bff00a0e8a6176.ttf",
     "static/media/lata-amstel.png": "/static/media/lata-amstel.9ebd143b702d7cc79e1d.png",
     "static/media/logo-amstel.png": "/static/media/logo-amstel.19b6d5ed227049e6192c.png",
     "index.html": "/index.html",
-    "main.e72b37d7.css.map": "/static/css/main.e72b37d7.css.map",
-    "main.6561baad.js.map": "/static/js/main.6561baad.js.map"
+    "main.b88c2cfe.css.map": "/static/css/main.b88c2cfe.css.map",
+    "main.e6c92879.js.map": "/static/js/main.e6c92879.js.map"
   },
   "entrypoints": [
-    "static/css/main.e72b37d7.css",
-    "static/js/main.6561baad.js"
+    "static/css/main.b88c2cfe.css",
+    "static/js/main.e6c92879.js"
   ]
 }

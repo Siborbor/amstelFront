@@ -9,9 +9,9 @@
   }
   .contenedor18years {
     left: 20px !important;
-    align-items: flex-end !important;
-    top: 0% !important;
-    bottom: 12px;
+    align-items:end !important;
+    top:0% !important;
+    bottom: -20px;
     z-index: -1;
   }
   .contenedorCabezera {
@@ -171,4 +171,7 @@
   gap: 5px;
 }
 
+.loader{
+  width:5vw;
+}
 }

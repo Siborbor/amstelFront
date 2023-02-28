@@ -81,7 +81,9 @@ input[type="file"] {
     font-family: "BebasNeueBold";
     justify-content: space-evenly;
   }
-  
+  .loader{
+    width:2vw;
+  }
   .botonEnviar p {
     margin:0px;
   }

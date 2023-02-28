@@ -4,11 +4,12 @@ import { Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import FlechaRoja from "../../../img/flecha-roja.jpg";
 import Modal from "react-modal";
+import { motion } from "framer-motion";
 
 const FormUser = () => {
   const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [textModal, setTexModal] = useState("");
+  const [check, setCheck] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -51,10 +52,9 @@ const FormUser = () => {
           } //control tipo de datos
           if (!values.telefono) {
             errors.telefono = "Ingresa tu teléfono*";
-          } else if (
-            (values.telefono.length > 10)
-          ) {
-            errors.telefono = "Tu número de teléfono debe contener menos de 10 dígitos*";
+          } else if (values.telefono.length > 10) {
+            errors.telefono =
+              "Tu número de teléfono debe contener menos de 10 dígitos*";
           } //control tipo de datos
           if (!values.ciudad) {
             errors.ciudad = "Ingresa tu ciudad*";
@@ -81,7 +81,10 @@ const FormUser = () => {
           isSubmitting,
         }) => (
           <form className="contenedorFormulario" onSubmit={handleSubmit}>
-            <input
+            <motion.input
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7 }}
               type="text"
               name="nombre"
               onChange={handleChange}
@@ -89,10 +92,15 @@ const FormUser = () => {
               value={values.name}
               placeholder="NOMBRES Y APELLIDOS"
             />
-            <p className="errormensaje">
+            <p
+              className="errormensaje"
+            >
               {errors.nombre && touched.nombre && errors.nombre}
             </p>
-            <input
+            <motion.input
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.9 }}
               type="text"
               name="cedula"
               onChange={handleChange}
@@ -103,7 +111,10 @@ const FormUser = () => {
             <p className="errormensaje">
               {errors.cedula && touched.cedula && errors.cedula}
             </p>
-            <input
+            <motion.input
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.1 }}
               type="telefono"
               name="telefono"
               onChange={handleChange}
@@ -114,7 +125,10 @@ const FormUser = () => {
             <p className="errormensaje">
               {errors.telefono && touched.telefono && errors.telefono}
             </p>
-            <input
+            <motion.input
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.3 }}
               type="email"
               name="email"
               onChange={handleChange}
@@ -125,7 +139,10 @@ const FormUser = () => {
             <p className="errormensaje">
               {errors.email && touched.email && errors.email}
             </p>
-            <input
+            <motion.input
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
               type="ciudad"
               name="ciudad"
               onChange={handleChange}
@@ -136,7 +153,12 @@ const FormUser = () => {
             <p className="errormensaje">
               {errors.ciudad && touched.ciudad && errors.ciudad}
             </p>
-            <div className="contenedorTerminos">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.7 }}
+              className="contenedorTerminos"
+            >
               <div className="contenedorTerminosycondiciones">
                 <label>
                   <input
@@ -145,11 +167,16 @@ const FormUser = () => {
                     onChange={handleChange}
                     id="checkbox"
                     value="acepto"
+                    onClick={() => setCheck(!check)}
                   ></input>
                 </label>
                 <div className="contenedorTextTerminos">
                   <p className="acepto">Acepto</p>
-                  <a className="linkterminos" onClick={() => openModal()}>
+                  <a
+                    className="linkterminos"
+                    onClick={() => openModal()}
+                    href="#"
+                  >
                     Términos y Condiciones
                   </a>
                 </div>
@@ -157,8 +184,11 @@ const FormUser = () => {
               <p className="camposrequeridos">
                 *Todos los campos son obligatorios
               </p>
-            </div>
-            <button
+            </motion.div>
+            <motion.button
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.7 }}
               className="botonSiguiente"
               disabled={isSubmitting}
               onClick={() =>
@@ -169,7 +199,7 @@ const FormUser = () => {
                 values.telefono.length === 10 &&
                 values.email !== "" &&
                 values.ciudad !== "" &&
-                values.checkbox !== ""
+                check !== false
                   ? navigate(
                       "/IngresoCodigo",
                       {
@@ -187,7 +217,7 @@ const FormUser = () => {
               }
             >
               SIGUIENTE <img src={FlechaRoja} className="flechaRoja" />
-            </button>
+            </motion.button>
           </form>
         )}
       </Formik>

@@ -3,17 +3,21 @@ import { useState } from "react";
 import { Formik } from "formik";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import FlechaRoja from "../../../img/flecha-roja.jpg"
+import FlechaRoja from "../../../img/flecha-roja.jpg";
 import Modal from "react-modal";
+import Loader from "../../../img/spiner.gif";
+import { motion } from "framer-motion";
 
 const FormCodigo = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
+  const [isLoading, setIsloading] = useState(false);
 
   const buttonPress = (values) => {
     if (values.codigo) {
+      setIsloading(true);
       //consulta
       let datos = JSON.stringify(values, null, 2);
       var myHeaders = new Headers();
@@ -28,29 +32,30 @@ const FormCodigo = () => {
         redirect: "follow",
       };
 
-      fetch("https://amstel-backend-production.up.railway.app/api", requestOptions)
-        .then(response => response.json())
+      fetch(
+        "https://amstel-backend-production.up.railway.app/api",
+        requestOptions
+      )
+        .then((response) => response.json())
         .then((data) => {
-             if (data.codigo === 200) {
-               navigate("/yaestasparticipando", {
-                 state: {
-                   nombre: values.nombre,
-                   cedula: values.cedula,
-                   telefono: values.telefono,
-                   email: values.email,
-                   ciudad: values.ciudad,
-                 },
-               });
-             } else
-                if (data.codigo === 400) {
-               openModal();
-               setTexModal("Código ya ha sido ingresado");
-             }else{
-              openModal();
-              setTexModal("Código inválido");
-             }
-           })
-         .catch((error) => console.log("error", error));
+          if (data.codigo === 200 || data.codigo === 400) {
+            setIsloading(false);
+            navigate("/yaestasparticipando", {
+              state: {
+                nombre: values.nombre,
+                cedula: values.cedula,
+                telefono: values.telefono,
+                email: values.email,
+                ciudad: values.ciudad,
+              },
+            });
+          } else {
+            setIsloading(false);
+            openModal();
+            setTexModal("Código inválido");
+          }
+        })
+        .catch((error) => console.log("error", error));
     }
   };
 
@@ -66,7 +71,7 @@ const FormCodigo = () => {
     <div>
       <Formik
         initialValues={{
-          iduser:  Math.floor(Math.random() * 100),
+          iduser: Math.floor(Math.random() * 100),
           nombre: location.state.nombre,
           cedula: location.state.cedula,
           telefono: location.state.telefono,
@@ -100,7 +105,10 @@ const FormCodigo = () => {
           isSubmitting,
         }) => (
           <form className="contenedorFormularioCodigo" onSubmit={handleSubmit}>
-            <input
+            <motion.input
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.1 }}
               type="text"
               name="codigo"
               onChange={handleChange}
@@ -122,14 +130,24 @@ const FormCodigo = () => {
                 Aceptar
               </button>
             </Modal>
-            <button
+            <motion.button
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.3}}
               type="submit"
               className="botonEnviar"
               disabled={isSubmitting}
               onClick={() => buttonPress(values)}
             >
-              Enviar <img src={FlechaRoja} className="flechaRoja" />
-            </button>
+              {isLoading ? (
+                <img src={Loader} className="loader" />
+              ) : (
+                <p>
+                  Enviar
+                  <img src={FlechaRoja} className="flechaRoja" />
+                </p>
+              )}
+            </motion.button>
           </form>
         )}
       </Formik>
