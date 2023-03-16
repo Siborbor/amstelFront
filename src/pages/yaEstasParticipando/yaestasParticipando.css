@@ -36,6 +36,15 @@ background-color: white;
   font-family: "BebasNeueBold";
 }
 
+.subtitulo-yaestasparticipando{
+    margin-top: 2vw;
+    text-align: center;
+    font-size: 2vw;
+    font-family: 'BebasNeuebold';
+    color:#eb1c24;
+    margin:0px;
+}
+
 .boton_subir_otro_codigo:hover {
     box-shadow: 4px 4px 1px rgba(0,0,0,0.75);
   -webkit-box-shadow: 3px 5px 0px 0px rgba(0,0,0,0.75);

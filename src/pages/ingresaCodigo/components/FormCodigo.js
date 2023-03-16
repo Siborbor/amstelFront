@@ -25,20 +25,19 @@ const FormCodigo = () => {
 
       var raw = datos;
 
+      console.log("raws"+raw);
+
       var requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
         redirect: "follow",
       };
-
-      fetch(
-        "https://amstel-backend-production.up.railway.app/api",
-        requestOptions
-      )
+      fetch("http://api.desarrollo.viajaconamstel.com/api/user", requestOptions)
         .then((response) => response.json())
         .then((data) => {
-          if (data.codigo === 200 || data.codigo === 400) {
+          console.log(data);
+          if (data.codigo === 200) {
             setIsloading(false);
             navigate("/yaestasparticipando", {
               state: {
@@ -47,6 +46,7 @@ const FormCodigo = () => {
                 telefono: values.telefono,
                 email: values.email,
                 ciudad: values.ciudad,
+                fecha_nacimiento: values.fecha_nacimiento,
               },
             });
           } else {
@@ -71,13 +71,13 @@ const FormCodigo = () => {
     <div>
       <Formik
         initialValues={{
-          iduser: Math.floor(Math.random() * 100),
           nombre: location.state.nombre,
           cedula: location.state.cedula,
           telefono: location.state.telefono,
           email: location.state.email,
           ciudad: location.state.ciudad,
           codigo: "",
+          fecha_nacimiento: location.state.fecha_nacimiento,
         }}
         validate={(values) => {
           const errors = {};
@@ -114,7 +114,7 @@ const FormCodigo = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.codigo}
-              placeholder="código"
+              placeholder="CÓDIGO"
             />
             <p className="errormensaje">
               {errors.codigo && touched.codigo && errors.codigo}
@@ -125,15 +125,17 @@ const FormCodigo = () => {
               ariaHideApp={false}
               contentLabel="Example Modal"
             >
-              <h2 className="tituloModal">{textModal}</h2>
-              <button className="botonModal" onClick={() => closeModal()}>
-                Aceptar
-              </button>
+              <div className="contenedormodalerror">
+                <h2 className="tituloModal">{textModal}</h2>
+                <button className="botonModal" onClick={() => closeModal()}>
+                  Aceptar
+                </button>
+              </div>
             </Modal>
             <motion.button
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.3}}
+              transition={{ duration: 1.3 }}
               type="submit"
               className="botonEnviar"
               disabled={isSubmitting}

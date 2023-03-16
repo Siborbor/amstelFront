@@ -12,12 +12,14 @@
   font-weight: bold;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
 .contenedor18years {
   display: flex;
   align-items: center;
   position: absolute;
   left: 50px;
-  top: 120%;
+  top: 113%;
   gap:10px
 }
 

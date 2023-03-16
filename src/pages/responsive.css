@@ -9,11 +9,23 @@
   }
   .contenedor18years {
     left: 20px !important;
-    align-items:end !important;
-    top:0% !important;
+    align-items: end !important;
+    justify-content: center;
+    top: 0% !important;
     bottom: -20px;
     z-index: -1;
   }
+  .contenedor18years_text {
+    font-size: 1.8vw !important;
+  }
+  .contenedor18years_text {
+    font-size: 1.8vw !important;
+    margin: 0px;
+  }
+  .contenedor18years_img{
+    width:3vw !important
+  }
+
   .contenedorCabezera {
     margin-top: 17vw;
   }
@@ -75,21 +87,23 @@
     gap: 0.3vw;
   }
   .contenedorFormulario input {
-    padding: 2vw 0px 2vw 3vw;
+    padding: 2.7vw 0px 1.5vw 3vw;
     width: 63vw;
     border-radius: 15px;
     font-size: 4vw;
     margin: auto;
   }
   input::placeholder {
-    font-size: 4vw;
+    font-size: 4vw !important;
+    margin: 0px;
+    font-family: "Oswald", sans-serif;
   }
   .camposrequeridos {
     padding-right: 0px;
   }
   .errormensaje {
     display: flex;
-    padding: 0px;
+    padding-top: 5px;
     width: 59vw;
     font-size: 3vw;
     margin: 0px auto;
@@ -109,9 +123,11 @@
     gap: 7px;
   }
 
+  
+
   .linkterminos,
-  .acepto {
-    font-size: 1rem;
+  .acepto,.camposrequeridos {
+    font-size: 5vw!important;
     margin: 0px;
   }
   .contenedor_formCodigo {
@@ -129,16 +145,19 @@
     gap: 10px;
     justify-content: center;
   }
+  .subtitulo-yaestasparticipando {
+    font-size: 6vw;
+    margin-top: 5vw;
+}
 
   .contenedorFormularioCodigo input {
-    padding: 2vw 0px 2vw 3vw;
+    padding: 3vw 0px 1.5vw 3vw;
     width: 44vw;
     border-radius: 15px;
     font-size: 4vw;
     margin: auto;
   }
   input::placeholder {
-    color: white;
     font-size: 4vw;
   }
 
@@ -150,28 +169,36 @@
     gap: 5px;
   }
 
-  .contenedorFormularioCodigo .errormensaje{
+  .contenedorFormularioCodigo .errormensaje {
     width: 42vw;
   }
 
-  .contenedor_yaestasParticipando{
+  .contenedor_yaestasParticipando {
     margin-top: 20vw;
     margin-right: 0px;
-}
+  }
 
-.titulo-yaestasparticipando{
+  .titulo-yaestasparticipando {
     font-size: 13vw;
+  }
+
+  .boton_subir_otro_codigo {
+    margin: 3vw auto;
+    border-radius: 25px;
+    font-size: 5vw;
+    padding: 4px 15px;
+    gap: 5px;
+  }
+
+  .loader {
+    width: 5vw;
+  }
+  /* .ReactModalPortal .ReactModal__Content{
+    inset: 3px!important;
+  } */
+/* 
+  .contenedormodalerror .ReactModalPortal .ReactModal__Content {
+    inset: 40px!important;
+  } */
 }
 
-.boton_subir_otro_codigo{
-  margin: 3vw auto;
-  border-radius: 25px;
-  font-size: 5vw;
-  padding: 4px 15px;
-  gap: 5px;
-}
-
-.loader{
-  width:5vw;
-}
-}

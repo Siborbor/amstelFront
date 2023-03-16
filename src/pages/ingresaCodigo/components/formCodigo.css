@@ -17,13 +17,6 @@
   font-size: 1.5vw;
 }
 
-
-
-input::placeholder {
-  color: white;
-  font-size: 1.5vw;
-}
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -69,6 +62,7 @@ input[type="file"] {
     background-color: white;
     color: #eb1c24;
     margin: 9vw auto;
+    min-height: 50px;
     border-radius: 25px;
     font-size: 2vw;
     font-weight: bold;

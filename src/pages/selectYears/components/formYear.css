@@ -22,7 +22,7 @@
   text-align: center;
   justify-content: center;
   display: flex;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
 }
 
 .contenedorCheckbox {
@@ -66,7 +66,6 @@
   justify-content: center;
   align-content: center;
   display: flex;
-  flex-direction: column;
 }
 
 .tituloModal {
@@ -85,6 +84,7 @@
   padding: 15px 23px;
   font-size: 1.3vw;
   font-family: "BebasNeueBold";
+  margin-bottom: 20px;
 }
 
 .botonModal:hover {
@@ -114,4 +114,8 @@
 
 .checkbox:checked {
   background-color: #eb1c24;
+}
+
+.contenedormodalerror{
+  text-align: center
 }

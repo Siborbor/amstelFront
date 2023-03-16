@@ -109,7 +109,7 @@ const FormYear = () => {
         setTexModal("No tienes la edad suficiente para ver este contenido");
         openModal();
       } else if (edad > 17) {
-        navigate("/IngresoDatos", { replace: true });
+        navigate("/IngresoDatos",{state: {fecha_nacimiento: date}, replace: true});
       }
     } else {
       setTexModal("Ingrese la Fecha de Su Nacimiento");
@@ -182,10 +182,12 @@ const FormYear = () => {
         ariaHideApp={false}
         contentLabel="Example Modal"
       >
-        <h2 className="tituloModal">{textModal}</h2>
-        <button className="botonModal" onClick={() => closeModal()}>
-          Aceptar
-        </button>
+        <div className="contenedormodalerror">
+          <h2 className="tituloModal">{textModal}</h2>
+          <button className="botonModal" onClick={() => closeModal()}>
+            Aceptar
+          </button>
+        </div>
       </Modal>
       <motion.button
         initial={{ y: 30, opacity: 0 }}

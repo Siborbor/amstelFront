@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormUser from "./components/FormUser";
 import "./formDatos.css";
+
 import { motion } from "framer-motion";
 
 const FormDatos = (props) => {
